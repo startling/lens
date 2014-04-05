@@ -1,0 +1,20 @@
+machine:
+  environment:
+    PATH: /home/ubuntu/.cabal/bin:$PATH
+  cache_directories:
+    - ".cabal-sandbox"
+    - "/home/ubuntu/.cabal"
+
+dependencies:
+  pre:
+    - cabal update
+    - cabal install cabal-install
+    - cabal sandbox init
+  override:
+    - cabal install --dependencies-only --enable-tests
+    - cabal configure --enable-tests
+
+test:
+  override:
+    - cabal build
+    - cabal test --show-details=always
