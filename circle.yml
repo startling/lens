@@ -1,0 +1,4 @@
+dependencies:
+  post:
+    - sed -i "s/\$ncpus/2/" ~/.cabal/config
+      
