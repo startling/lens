@@ -1,0 +1,4 @@
+dependencies:
+  pre:
+    - sudo apt-get update; sudo apt-get install eatmydata
+    - echo "export LD_PRELOAD=/usr/lib/libeatmydata/libeatmydata.so" >> ~/.circlerc
